@@ -1,0 +1,59 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.app__divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0 40px;
+  position: relative;
+}
+
+.app__divider::after {
+  content: attr(data-label);
+  position: absolute;
+  left: 0;
+  top: -9px;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: var(--bg-primary);
+  padding-right: 10px;
+}
+
+.app__main {
+  flex: 1;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .header {
+    padding: 16px 20px;
+  }
+
+  .barcode-input,
+  .result,
+  .history {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .app__divider {
+    margin: 0 20px;
+  }
+
+  .result__code-value {
+    font-size: 1rem;
+  }
+
+  .result__type-name {
+    font-size: 1.2rem;
+  }
+}
